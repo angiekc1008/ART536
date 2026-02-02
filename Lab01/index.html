@@ -9,21 +9,61 @@
     
     <a-scene>
 
-        <a-box color="#6e3c91" width="1.5" depth="2" height=".25" position=".4 .45 -0.85"></a-box>
-        <a-box color="#397837" width="1.6" depth="1.7" height=".35" position=".4 .45 -0.675"></a-box>
-        <a-sky color="#bbb"></a-sky>
-        <a-plane rotation="-90 0 90" position="-0.135 0 0 " width="3.7" height="2.6" color="#d4c1a3"></a-plane>
-        <a-box position=".4 .26 -0.85" width="1.5" height=".125" depth="2" color="#303030"></a-box>
-        <a-box position="-.288 .125 0.09" width=".125" height=".25" depth=".125" color="#303030"></a-box>
-        <a-box position="1.088 .125 0.09" width=".125" height=".25" depth=".125" color="#303030"></a-box>
-        <a-box position="1.088 .125 -1.79" width=".125" height=".25" depth=".125" color="#303030"></a-box>
-        <a-box position="-.288 .125 -1.79" width=".125" height=".25" depth=".125" color="#303030"></a-box>
+        <a-entity id="walls">
+            <a-box rotation="-0 0 0" position="-.14 1.15 -1.9" width="2.61" height="2.48" depth=".12" color="fffdf2"></a-box>
+            <a-box rotation="-0 90 0" position="1.22 1.15 0" width="3.94" height="2.48" depth=".12" color="fffdf2"></a-box>
+            <a-box rotation="-0 90 0" position="-1.494 1.15 -0.493" width="2.94" height="2.48" depth=".12" color="fffdf2"></a-box>
+            <a-box rotation="-0 0 0" position="-.14 1.15 1.9" width="2.61" height="2.48" depth=".12" color="fffdf2"></a-box>
+            <a-box rotation="0 90 0" position="-1.494 2.14 1.466" width="1" height=".5" depth=".12" color="fffdf2"></a-box>
+        </a-entity>
+        
+        <a-sky color="#cfbae3"></a-sky>
+        <a-plane id="floor" rotation="-90 0 90" position="-0.135 0 0 " width="3.7" height="2.6" color="#d4c1a3"></a-plane>
+
+        <a-entity id="bed">
+            <a-box color="#6e3c91" width="1.5" depth="2" height=".25" position=".4 .45 -0.85"></a-box>
+            <a-box color="#397837" width="1.54" depth="1.7" height=".35" position=".4 .45 -0.675"></a-box>
+            <a-entity id="bedframe">
+                <a-box position=".4 .26 -0.85" width="1.5" height=".125" depth="2" color="#303030"></a-box>
+                <a-box position="-.288 .125 0.09" width=".125" height=".25" depth=".125" color="#303030"></a-box>
+                <a-box position="1.088 .125 0.09" width=".125" height=".25" depth=".125" color="#303030"></a-box>
+                <a-box position="1.088 .125 -1.79" width=".125" height=".25" depth=".125" color="#303030"></a-box>
+                <a-box position="-.288 .125 -1.79" width=".125" height=".25" depth=".125" color="#303030"></a-box>
+            </a-entity>
+        </a-entity>   
+            
         <a-box rotation="0 90 0" color="#ad8458" width="0.71" depth="1.7" height=".5" position=".35 .25 1.5"></a-box>
-        <a-box rotation="0 90 0" color="#ededed" width="0.4" depth="0.4" height=".6" position="-.615 .3 -1.6"></a-box>
-        <a-cylinder position="-1.235 .8 -1.6" radius="0.025" height="1.75" color="#bababa"></a-cylinder>
-        <a-cone position="-1.235 1.6 -1.6" radius-bottom="0.2" height=".3" width=".45" depth=".45" color="#bababa" rotation="180 0 0"></a-cone>
-        <a-cylinder position="-1.235 .05 -1.6" radius="0.125" height=".05" color="#bababa"></a-cylinder>
-        <a-box rotation="0 90 0" color="#000" width="0.6" depth="0.4" height=".5" position="-1.2 .25 .375"></a-box>
+
+        <a-entity id="tv">
+            <a-box rotation="0 0 0" color="#000" width="0.55" depth="0.23" height=".03" position=".37 .515 1.7"></a-box>
+            <a-box rotation="0 0 0" color="#000" width="0.11" depth="0.05" height=".07" position=".37 .56 1.7"></a-box>
+            <a-box rotation="0 0 0" color="#000" width="0.9" depth="0.095" height=".5" position=".37 .85 1.7"></a-box>
+        </a-entity>
+
+        <a-entity id="drawers">   
+            <a-box rotation="0 90 0" color="#ededed" width="0.4" depth="0.4" height=".6" position="-.615 .3 -1.6"></a-box>
+            <a-box color="#e4e8f0" width="0.35" depth=".015" height=".17" position="-.615 .5 -1.4"></a-box>
+            <a-box color="#e4e8f0" width="0.35" depth=".015" height=".17" position="-.615 .308 -1.4"></a-box>
+            <a-box color="#e4e8f0" width="0.35" depth=".015" height=".17" position="-.615 .115 -1.4"></a-box>
+        </a-entity>
+
+        <a-entity id="lamp">
+            <a-cylinder position="-1.235 .8 -1.6" radius="0.025" height="1.75" color="#bababa"></a-cylinder>
+            <a-cone position="-1.235 1.6 -1.6" radius-bottom="0.2" height=".3" width=".45" depth=".45" color="#bababa" rotation="180 0 0"></a-cone>
+            <a-cylinder position="-1.235 .05 -1.6" radius="0.125" height=".05" color="#bababa"></a-cylinder>
+        </a-entity>
+
+        
+
+        <a-entity id="bookshelf" position="0 0 -.25">
+            <a-box rotation="0 90 0" color="#000" width="0.6" depth="0.4" height=".025" position="-1.2 .235 .375"></a-box>
+            <a-box rotation="0 90 0" color="#000" width="0.6" depth="0.4" height=".025" position="-1.2 .45 .375"></a-box>
+            <a-box rotation="0 90 0" color="#000" width="0.6" depth="0.4" height=".025" position="-1.2 .0125 .375"></a-box>
+            <a-cylinder position="-1.35 .235 .63" radius="0.025" height=".5" color="#000"></a-cylinder>
+            <a-cylinder position="-1.05 .235 .63" radius="0.025" height=".5" color="#000"></a-cylinder>
+            <a-cylinder position="-1.35 .235 .13" radius="0.025" height=".5" color="#000"></a-cylinder>
+            <a-cylinder position="-1.05 .235 .13" radius="0.025" height=".5" color="#000"></a-cylinder>
+        </a-entity>
 
 
 
