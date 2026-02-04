@@ -9,6 +9,12 @@
     
     <a-scene>
 
+        <a-light type="ambient" intensity="1"></a-light>
+        <a-light type="point" intensity="6" color="#fff694" position="-1.23 1.785 -1.61"></a-light>
+        <a-light type="directional" position="0 0 0" ></a-light>
+        <a-light type="hemisphere" intensity="1.0" color="ff0000"></a-light>
+        
+
         <a-entity id="walls">
             <a-box rotation="-0 0 0" position="-.14 1.15 -1.9" width="2.61" height="2.48" depth=".12" color="fffdf2"></a-box>
             <a-box rotation="-0 90 0" position="1.22 1.15 0" width="3.94" height="2.48" depth=".12" color="fffdf2"></a-box>
@@ -64,8 +70,8 @@
         </a-entity>
 
         <a-entity id="lamp">
-            <a-cylinder position="-1.235 .8 -1.6" radius="0.025" height="1.75" color="#bababa"></a-cylinder>
-            <a-cone position="-1.235 1.6 -1.6" radius-bottom="0.2" height=".3" width=".45" depth=".45" color="#bababa" rotation="180 0 0"></a-cone>
+            <a-cylinder position="-1.235 .6 -1.6" radius="0.025" height="1.75" color="#bababa"></a-cylinder>
+            <a-cone position="-1.235 1.6 -1.6" radius-bottom="0.2" height=".3" width=".45" depth=".45" color="#bababa" rotation="180 0 0" opacity="0.5"></a-cone>
             <a-cylinder position="-1.235 .05 -1.6" radius="0.125" height=".05" color="#bababa"></a-cylinder>
         </a-entity>
 

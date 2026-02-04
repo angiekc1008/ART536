@@ -15,7 +15,21 @@
         <a-light type="ambient" intensity="1" color="#fff"></a-light>
         <a-light type="point" intensity="1" color="#ff6161"></a-light>
         <a-light type="point" intensity="5" color="#3bfffc"></a-light>
+        <a-light type="spot" ></a-light>
         <a-sky color="#333"></a-sky>
+
+        <a-assets>
+            <a-cubemap id="pisa">
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/px.png"/>
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/nx.png"/>
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/py.png"/>
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/ny.png"/>
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/pz.png"/>
+                <a-cubemap-face src="https://threejs.org/examples/textures/cube/pisa/nz.png"/>
+            </a-cubemap>
+        </a-assets>
+
+        <a-light type="probe" envMap="#pisa"></a-light>
 
 
     </a-scene>
