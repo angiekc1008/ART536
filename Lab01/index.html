@@ -9,6 +9,11 @@
     
     <a-scene>
 
+        <a-assets>
+            <img id="blanket_disp" src="/faux_fur_grometric_4k.blend/textures/faux_fur_geometric_disp_4k.png">
+            <img id="blanket_anistropy" src="/faux_fur_geometric_4k.blend/textures/faux_fur_geometric_anisotropy_strength_4k.png">
+        </a-assets>
+
         <a-light type="ambient" intensity="1"></a-light>
         <a-light type="point" intensity="6" color="#fff694" position="-1.23 1.785 -1.61"></a-light>
         <a-light type="directional" position="0 0 0" ></a-light>
@@ -39,7 +44,7 @@
 
         <a-entity id="bed">
             <a-box color="#6e3c91" width="1.5" depth="2" height=".25" position=".4 .45 -0.85"></a-box>
-            <a-box color="#397837" width="1.54" depth="1.7" height=".35" position=".4 .45 -0.675"></a-box>
+            <a-box color="#397837" width="1.54" depth="1.7" height=".35" position=".4 .45 -0.675" material="color: #009423; roughness: 0; metalness: 0.5; src: #blanket_disp;" ></a-box>
             <a-entity id="bedframe">
                 <a-box position=".4 .26 -0.85" width="1.5" height=".125" depth="2" color="#303030"></a-box>
                 <a-box position="-.288 .125 0.09" width=".125" height=".25" depth=".125" color="#303030"></a-box>
