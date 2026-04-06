@@ -6,8 +6,18 @@
     <title>My Room</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-inspector@1.7.0/dist/aframe-inspector.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-blink-controls/dist/aframe-blink-controls.min.js"></script>
 </head>
 <body>
+
+    <a-entity id="player" position="0 1.6 0">
+            <!-- camera -->
+            <a-entity id="camera" camera wasd-controls look-controls></a-entity>
+            <!-- hand controls -->
+            <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="hand: left" blink-controls></a-entity>
+            <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
+    </a-entity>
     
     <a-scene>
 
@@ -41,10 +51,10 @@
         <a-box id="window" rotation="0 90 0" position="1.15 1.53 0.1" color="#d9f5ff" width="1.36" height="1.36" depth="0"></a-box>
         
         <a-sky color="#cfbae3"></a-sky>
-        <a-plane id="floor" rotation="-90 0 90" position="-0.135 0 0 " width="3.7" height="2.6" color="#d4c1a3"></a-plane>
+        <a-plane id="floor" class="floor" rotation="-90 0 90" position="-0.135 0 0 " width="3.7" height="2.6" color="#d4c1a3"></a-plane>
         <a-plane id="ceiling" rotation="90 0 90" position="-.135 2.39 0" width="3.7" height="2.6" color="fffdf2"></a-plane>
 
-        <a-entity id="bed">
+        <a-entity id="bed" class="floor">
             <a-box color="#6e3c91" width="1.5" depth="2" height=".25" position=".4 .45 -0.85"></a-box>
             <a-box color="#397837" width="1.54" depth="1.7" height=".35" position=".4 .45 -0.675" material="src:#waffle_diff;" ></a-box>
             <a-entity id="bedframe">
