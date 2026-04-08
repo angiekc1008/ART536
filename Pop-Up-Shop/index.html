@@ -24,7 +24,11 @@
 
             <a-mixin id="solid-orange" material="color: orange"></a-mixin>
 
-            <img id="song-titles" src="">
+            <img id="song-titles" src="/assets/images/songtitletexture.jpg">
+            <img id="song-titles-red" src="/assets/images/songtitlesred.jpg">
+            <img id="cherrymural" src="/assets/images/KP-Cherry-mural.jpg">
+            <img id="largemural" src="/assets/images/mural.jpg">
+            <img id="floortexture" src="/assets/floor-texture/clean_asphalt_disp_4k.png">
 
 
         </a-assets>
@@ -38,17 +42,19 @@
         <a-light type="point" decay="0.6" position="3.6 3.8 -13" color="#ffa54d"></a-light>
 
 
-        <a-entity mixin="wall-short secondary" position="0 2 -17.5"></a-entity>
+        <a-entity mixin="wall-short secondary" position="0 2 -17.5" material="src:#cherrymural"></a-entity>
         <!-- <a-entity mixin="wall-short secondary" position="0 2 -3.5"></a-entity> commented out for viewing purposes --> 
-        <a-entity mixin="wall-long secondary" position="-4 2 -10.35" rotation="0 90 0"></a-entity>
+        <a-entity mixin="wall-long secondary" position="-4 2 -10.35" rotation="0 90 0" material="src:#largemural"></a-entity>
         <a-entity mixin="wall-long secondary" position="4 2 -10.35" rotation="0 90 0"></a-entity>
-        <a-plane mixin="solid-orange" width="8" height="14" rotation="-90 0 0" position="0 0 -10.35"></a-plane>
-        <a-box mixin="solid-orange" id="stage" position="0 .25 -16" width="8" height="0.5" depth="3"></a-box>
+        <a-plane mixin="solid-orange" width="8" height="14" rotation="-90 0 0" position="0 0 -10.35" material="src:#floortexture; roughness:0.6"></a-plane>
+        <a-box mixin="solid-orange" id="stage" position="0 .25 -16" width="8" height="0.5" depth="3" material="src:#floortexture; roughness:0.6" shadow></a-box>
+        <a-entity mixin="poster-frame" ></a-entity>
 
-        <a-entity>
 
-            <a-sphere position="3.175 0.7 -9.5" radius=".9"></a-sphere>
-            <a-sphere position="3.175 0.7 -7.7" radius=".9"></a-sphere>
+        <a-entity position="-.3 0 0">
+
+            <a-sphere position="3.175 0.7 -9.5" radius=".9" rotation="0 165 0" material="roughness: .25; metalness: 0.25; src:#song-titles-red" shadow></a-sphere>
+            <a-sphere position="3.175 0.7 -7.7" radius=".9" rotation="0 -130 0" material="roughness: .25; metalness: 0.25; src:#song-titles-red" shadow></a-sphere>
 
         </a-entity>
 
