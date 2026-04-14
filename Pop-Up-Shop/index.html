@@ -24,6 +24,8 @@
 
             <a-mixin id="solid-orange" material="color: orange"></a-mixin>
 
+            <a-asset-item id="kp-wordmark" src="/assets/3D/KP-wordmark.gltf"></a-asset-item>
+
             <img id="song-titles" src="/assets/images/songtitletexture.jpg">
             <img id="song-titles-red" src="/assets/images/songtitlesred.jpg">
             <img id="cherrymural" src="/assets/images/KP-Cherry-mural.jpg">
@@ -49,6 +51,8 @@
         <a-plane mixin="solid-orange" width="8" height="14" rotation="-90 0 0" position="0 0 -10.35" material="src:#floortexture; roughness:0.6"></a-plane>
         <a-box mixin="solid-orange" id="stage" position="0 .25 -16" width="8" height="0.5" depth="3" material="src:#floortexture; roughness:0.6" shadow></a-box>
         <a-entity mixin="poster-frame" ></a-entity>
+
+        <a-gltf-model src="#kp-wordmark"></a-gltf-model>
 
 
         <a-entity position="-.3 0 0">
