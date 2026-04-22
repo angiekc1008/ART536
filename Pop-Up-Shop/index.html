@@ -41,7 +41,7 @@
             <a-asset-item id="KPwand" src="/assets/3D/KP-wand.gltf"></a-asset-item>
             <a-asset-item id="cherry" src="/assets/3D/cherry.obj"></a-asset-item>
             <a-asset-item id="pedestal" src="/assets/3D/chrome_pedestal_table.obj"></a-asset-item>
-            <a-asset-item id="sculpture" src="/assets/3D/scene.gltf"></a-asset-item>
+            <a-asset-item id="sculpture" src="/assets/3D/torsosculpture.obj"></a-asset-item>
 
 
 
@@ -59,6 +59,7 @@
         </a-assets>
 
         <a-light type="ambient" intensity="1.5"></a-light>
+        <a-light type="directional" position="-3.374 0 -13.86"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -4" color="#ffa54d"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -8" color="#ffa54d"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -13" color="#ffa54d"></a-light>
@@ -84,7 +85,7 @@
         <a-gltf-model src="#KPwand" scale="0.06 0.06 0.06" position="-0.04 3.5 -3.50427" rotation="39.794 -6.026 81.147"></a-gltf-model>
 
         <a-entity id="entry-frame">
-            <a-box color="black" material="metalness: 1; roughness: 0.1" position="-2.148 1.508 -3.496" geometry="primitive: box; width: 0.04; height: 3.02; depth: 0.28"></a-box>
+            <a-box color="black" material="metalness: 1; roughness: 0.1" position="-2.13 1.508 -3.496" geometry="primitive: box; width: 0.04; height: 3.02; depth: 0.28"></a-box>
             <a-box color="black" material="metalness: 1; roughness: 0.1" position="2.13 1.508 -3.496" geometry="primitive: box; width: 0.04; height: 3.02; depth: 0.28"></a-box>
             <a-box color="black" material="metalness: 1; roughness: 0.1" position="0 3 -3.496" rotation="0 0 90" geometry="primitive: box; width: 0.04; height: 4.3; depth: 0.28"></a-box>
         </a-entity>
@@ -95,9 +96,11 @@
         </a-entity>
 
         <a-entity id="metal-sculpture">
-            <a-gltf-model src="#sculpture" scale="0.075 0.075 0.075" position="3.175 0.08 -9.5" rortation="0 8.2 0"></a-gltf-model>
-            <a-obj-model src="#pedestal" scale="0.025 0.025 0.025" position="-3.374 0 -13.86" rotation="0 143 0"></a-obj-model>
+            <a-obj-model src="#sculpture" scale="1.5 1.5 1.5" position="-4.17 0.31 -14.35" rotation="0 90 0" material="metalness: 1; roughness: 0.4;" material.envMap="reflectionCube;"></a-obj-model>
+            <a-obj-model src="#pedestal" scale="0.035 0.021 0.035" position="-3.374 0 -13.86" rotation="0 143 0" material="metalness: 1; roughness: 0.3; "></a-obj-model>
         </a-entity>
+
+        
 
 
 
