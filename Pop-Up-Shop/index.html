@@ -42,6 +42,13 @@
             <a-asset-item id="cherry" src="/assets/3D/cherry.obj"></a-asset-item>
             <a-asset-item id="pedestal" src="/assets/3D/chrome_pedestal_table.obj"></a-asset-item>
             <a-asset-item id="sculpture" src="/assets/3D/torsosculpture.obj"></a-asset-item>
+            <a-asset-item id="drum-chair" src="/assets/3D/drum_throne.obj"></a-asset-item>
+            <a-asset-item id="drum-snare" src="/assets/3D/snare_drum.obj"></a-asset-item>
+            <a-asset-item id="drum-tom" src="/assets/3D/tom.obj"></a-asset-item>
+            <a-asset-item id="drum-floortom" src="/assets/3D/floor_tom.obj"></a-asset-item>
+            <a-asset-item id="microphone" src="/assets/3D/microphone_302.obj"></a-asset-item>
+            <a-asset-item id="guitar" src="/assets/3D/guitar.obj"></a-asset-item>
+            <a-asset-item id="amp" src="/assets/3D/guitar_amplifier.obj"></a-asset-item>
 
 
 
@@ -54,12 +61,13 @@
             <img id="holdonbaby" src="/assets/album-covers/holdonbaby-cover.jpg">
             <img id="cheapqueen" src="/assets/album-covers/cheapqueen-cover.jpg">
             <img id="pussyisgod" src="/assets/album-covers/pussyisgod-cover.jpg">
-
+            <img id="pedestal-texture" src="/assets/slate_floor_diff_4k.jpg">
+            <img id="checkoutdesk" src="/assets/woodendesk/wood_table_diff_4k.jpg">
 
         </a-assets>
 
-        <a-light type="ambient" intensity="1.5"></a-light>
-        <a-light type="directional" position="-3.374 0 -13.86"></a-light>
+        <!-- lighting -->
+        <a-light type="ambient" intensity="1.5" color="#FFF"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -4" color="#ffa54d"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -8" color="#ffa54d"></a-light>
         <a-light type="point" decay="0.6" position="-3.6 3.8 -13" color="#ffa54d"></a-light>
@@ -68,17 +76,24 @@
         <a-light type="point" decay="0.6" position="3.6 3.8 -13" color="#ffa54d"></a-light>
 
 
-        <a-entity mixin="wall-short secondary" position="0 2 -17.5" material="src:#cherrymural"></a-entity>
+        <!-- walls and posters -->
+        <a-entity mixin="wall-short secondary" position="0 2 -17.5"></a-entity>
+        <a-plane src="#cherrymural" position="3.84 2.5 -6.75" scale="3.93 2.43 1" rotation="0 -90 0"></a-plane>
         <a-entity mixin="wall-top glass" position="0 3.5 -3.49"></a-entity>
         <a-entity mixin="wall-side glass" position="-3.15 1.998 -3.49"></a-entity>
         <a-entity mixin="wall-side glass" position="3.15 1.998 -3.49"></a-entity>
         <!-- <a-entity mixin="wall-short secondary" position="0 2 -3.5"></a-entity> commented out for viewing purposes --> 
-        <a-entity mixin="wall-long secondary" position="-4 2 -10.35" rotation="0 90 0" material="src:#largemural"></a-entity>
+        <a-entity mixin="wall-long secondary" position="-4 2 -10.35" rotation="0 90 0"></a-entity>
+        <a-plane src="#largemural" position="-3.842 2 -10.35" height="4" width="14" rotation="0 90 0"></a-plane>
         <a-entity mixin="wall-long secondary" position="4 2 -10.35" rotation="0 90 0"></a-entity>
         <a-plane mixin="solid-orange" width="8" height="14" rotation="-90 0 0" position="0 0 -10.35" material="src:#floortexture; roughness:0.6"></a-plane>
         <a-box mixin="solid-orange" id="stage" position="0 .25 -16" width="8" height="0.5" depth="3" material="src:#floortexture; roughness:0.6" shadow></a-box>
         <a-entity mixin="poster-frame" ></a-entity>
+        <a-plane position="0 2.5 -17.25" width="4" height="2" color="black"></a-plane>
+    
 
+
+        <!-- glass insets -->
         <!-- <a-gltf-model src="#kp-wordmark" scale="0.02 0.02 0.02" position="0.1 3.5 -3.668" rotation="0 135 0"></a-gltf-model> -->
         <a-gltf-model src="#KPlogo-K" scale="0.045 0.05 0.045" position="-2.967 1.689 -3.493" rotation="0 -45 0"></a-gltf-model>
         <a-gltf-model src="#KPlogo-P" scale="0.045 0.05 0.045" position="3.037 1.689 -3.493" rotation="0 -45 0"></a-gltf-model>
@@ -90,6 +105,8 @@
             <a-box color="black" material="metalness: 1; roughness: 0.1" position="0 3 -3.496" rotation="0 0 90" geometry="primitive: box; width: 0.04; height: 4.3; depth: 0.28"></a-box>
         </a-entity>
 
+
+        <!-- sculptures -->
         <a-entity position="0 -0.2 1.85" id="cherry-sculpture">
             <a-obj-model src="#cherry" scale="0.075 0.075 0.075" position="3.175 0.08 -9.5" rortation="0 8.2 0" material="src:#song-titles-red"></a-obj-model>
             <a-obj-model src="#cherry" scale="0.075 0.075 0.075" position="3.175 0.08 -7.9" rotation="0 143 0" material="src:#song-titles-red"></a-obj-model>
@@ -97,21 +114,33 @@
 
         <a-entity id="metal-sculpture">
             <a-obj-model src="#sculpture" scale="1.5 1.5 1.5" position="-4.17 0.31 -14.35" rotation="0 90 0" material="metalness: 1; roughness: 0.4;" material.envMap="reflectionCube;"></a-obj-model>
-            <a-obj-model src="#pedestal" scale="0.035 0.021 0.035" position="-3.374 0 -13.86" rotation="0 143 0" material="metalness: 1; roughness: 0.3; "></a-obj-model>
+            <a-obj-model src="#pedestal" scale="0.035 0.021 0.035" position="-3.374 0 -13.86" rotation="0 143 0" color="#C6C9E2" material="src:#pedestal-texture; metalness: 0; roughness: 0; "></a-obj-model>
         </a-entity>
 
+
+        <!-- stage setup -->
+        <a-obj-model src="#microphone" scale="0.025 0.025 0.025" position="0 1.8 -14.85" color="black" rotation="-37 0 1.7"></a-obj-model>
+        <a-cylinder position="0 .5 -15" radius="0.15" height=".05" color="black"></a-cylinder>
+        <a-cylinder position="0 1 -15" radius="0.02" height="2" color="black"></a-cylinder>    <!-- microphone -->
+        <a-obj-model src="#drum-tom" scale="0.015 0.015 0.015" position="-3.275 0.5 -16" material="metalness: 1; roughness: 0.2"></a-obj-model>
+        <a-obj-model src="#drum-floortom" scale="0.0175 0.0175 0.0175" position="-2.3 0.5 -15.8" material="metalness: 1; roughness: 0.2"></a-obj-model>
+        <a-obj-model src="#drum-snare" scale="0.0175 0.0175 0.0175" position="-1.5 0.5 -16" rotation="0 20 0" material="metalness: 1; roughness: 0.2"></a-obj-model>
+        <a-obj-model src="#drum-chair" scale="0.02 0.02 0.02" position="-2.45 0.5 -16.85" material="metalness: 1; roughness: 0.2"></a-obj-model>    <!-- drumset -->
+        <a-obj-model src="#guitar" scale=" 0.02 0.02 0.02" position="3 0.5 -16" color=""></a-obj-model>
+
+
+
+        <a-box position="2.58 .65 -12" geometry="width: 1.05; height: 1.25; depth: 3" src="#checkoutdesk"></a-box>
+
+
+
         
-
-
-
-        <a-entity></a-entity>
-
+        <!-- vinyls -->
         <a-entity mixin="vinyl-cover" material="src: #girlviolence" position="3.84 1 -4.4" rotation="0 -90 0"></a-entity>
         <a-entity mixin="vinyl solid-orange" position="3.84 1.66 -4.4" rotation="0 -90 0"></a-entity>
 
         <a-entity mixin="vinyl-cover" material="src: #holdonbaby" position="3.84 2.5 -4.4" rotation="0 -90 0"></a-entity>
         <a-entity mixin="vinyl lightblue" position="3.84 3.15 -4.4" rotation="0 -90 0"></a-entity>
-
 
         <a-entity mixin="vinyl-cover" material="src: #pussyisgod" position="3.84 1 -9.15" rotation="0 -90 0"></a-entity>
         <a-entity mixin="vinyl solid-orange" position="3.84 1.66 -9.15" rotation="0 -90 0"></a-entity>
