@@ -107,7 +107,7 @@
 
 
         <!-- sculptures -->
-        <a-entity position="0 -0.2 1.85" id="cherry-sculpture">
+        <a-entity position="0 -0.2 1.85" id="cherry-sculpture" position="0 0 0.3">
             <a-obj-model src="#cherry" scale="0.075 0.075 0.075" position="3.175 0.08 -9.5" rortation="0 8.2 0" material="src:#song-titles-red"></a-obj-model>
             <a-obj-model src="#cherry" scale="0.075 0.075 0.075" position="3.175 0.08 -7.9" rotation="0 143 0" material="src:#song-titles-red"></a-obj-model>
         </a-entity>
@@ -126,12 +126,23 @@
         <a-obj-model src="#drum-floortom" scale="0.0175 0.0175 0.0175" position="-2.3 0.5 -15.8" material="metalness: 1; roughness: 0.2"></a-obj-model>
         <a-obj-model src="#drum-snare" scale="0.0175 0.0175 0.0175" position="-1.5 0.5 -16" rotation="0 20 0" material="metalness: 1; roughness: 0.2"></a-obj-model>
         <a-obj-model src="#drum-chair" scale="0.02 0.02 0.02" position="-2.45 0.5 -16.85" material="metalness: 1; roughness: 0.2"></a-obj-model>    <!-- drumset -->
-        <a-obj-model src="#guitar" scale=" 0.02 0.02 0.02" position="3 0.5 -16" color=""></a-obj-model>
+        <a-obj-model src="#guitar" scale="0.02 0.02 0.02" position="3 0.5 -16" color=""></a-obj-model>
+        <a-obj-model src="#amp" scale="0.02 0.02 0.02" position="3 0.5 -16" material="metalness: 0.5; roughness: 0.5"></a-obj-model>
 
 
 
-        <a-box position="2.58 .65 -12" geometry="width: 1.05; height: 1.25; depth: 3" src="#checkoutdesk"></a-box>
+        <a-box position="2.58 .65 -13" geometry="width: 1.05; height: 1.25; depth: 3" src="#checkoutdesk"></a-box>
+        <!-- <a-box position="3.45 .5 -11.5" geometry="width: 0.7; height: 1; depth: 1"></a-box> -->
 
+        <a-entity id="poster-display">
+
+            <a-box position="3.45 0.5 -11" geometry="width: 0.7; height: 1; depth: 0.1"></a-box>
+            <a-box position="3.45 0.5 -10" geometry="width: 0.7; height: 1; depth: 0.1"></a-box>
+            <a-box position="3.751 0.5 -10.5" geometry="width: 0.1; height: 1; depth: 1"></a-box>
+            <a-box position="3.15 0.5 -10.5" geometry="width: 0.1; height: 1; depth: 1"></a-box>
+            <a-box position="3.45 0.05 -10.5" geometry="width: 0.7; height: 0.1; depth: 1"></a-box>
+        
+        </a-entity>
 
 
         
